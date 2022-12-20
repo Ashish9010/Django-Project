@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Marks Of Students</title>
+        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
+        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script> 
+        <script>
+            $(function() {
+               $("#mark").dataTable();
+            });
+        </script>
+
+
+    </head>
+    
+    <body>
+    	<h2> <center>WELCOME TO SGGG TY IT</h2></center>
+    	  <!-- <h3><center><font color="red">Developed By Python 21Cr Group</font> </h3></center> -->
+    	  <hr color="green">
+    	  <h4> <center> <h2><b>Total Marks of Student</b></h2></center> </h4>
+    	 
+
+    	 	<table id="mark" class="display" style="width:100%" >
+				<thead>
+					<tr>
+						<th>Reg NO</th>
+					    <th>Total Marks</th>
+					    <th>Semester</th>
+					    <th>Year</th>
+				    </tr>
+				</thead>
+ 
+
+		  
+
+	    		{% for entry in mk %}
+	    		<tr>
+                    <td  align="center"> {{ entry.regNO }} </td>
+                    <td  align="center"> {{ entry.Totalmarks }} </td>
+                    <td  align="center"> {{ entry.Semester }} </td>
+		            <td  align="center"> {{ entry.Year }} </td>
+
+ 				</tr>
+			    	
+			  
+				{% endfor %}
+
+			</table>
+			<br> </br>
+			<br> </br>
+
+				
+                <a href="http://127.0.0.1:8000/">
+					<button class="Home">
+						Back To HOME
+					</button>
+				</a>
+					<br> </br>
+			    	
+
+				
+        
+    	
+    	
+    </body>
+</html>

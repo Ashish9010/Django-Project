@@ -1,0 +1,162 @@
+<!Doctype Html>  
+<Html>     
+<Head>      
+<Title>     
+Registration Form 
+</Title>  
+<style type=text/css>   
+body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: rgb(173, 210, 220);  
+}  
+.container {  
+    padding: 25px;  
+  background-color: lightblue;  
+}  
+  
+input[type=text], input[type=password], textarea {  
+  width: 10%;  
+  padding: 5px;  
+  margin: 3px 0 11px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #f6f3f3;  
+}  
+input[type=text]:focus, input[type=password]:focus {  
+  background-color: hsl(210, 57%, 97%);  
+  outline: none;  
+}  
+ div {  
+    padding: 25px 0;  
+    }  
+hr {  
+  border: 1px solid #f1f1f1;  
+  margin-bottom: 15px;  
+}  
+.registerbtn {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 10px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 30%;  
+  opacity: 0.9;  
+}  
+.registerbtn:hover {  
+  opacity: 1;  
+}  
+header {  
+background-color: orange;  
+position: fixed;  
+left: 0;  
+right: 0;  
+top: 5px;  
+height: 30px;  
+display: flex;  
+align-items: center;  
+box-shadow: 0 0 25px 0 black;  
+}  
+header * {  
+display: inline;  
+}  
+header li {  
+margin: 20px;  
+}  
+header li a {  
+color: blue;  
+text-decoration: none;  
+}  
+</style>   
+</Head>  
+<Body>   
+<header>  
+<nav>  
+<ul>  
+<li>  
+<a href="http://127.0.0.1:8000/"> Home </a>  
+</li>  
+<li>  
+<a href="http://127.0.0.1:8000/student"> Student Info </a>  
+</li>  
+<li>  
+<a href="http://127.0.0.1:8000/admission"> Admission Info </a>  
+</li>  
+<li> <a href="http://127.0.0.1:8000/mark"> Marks Info </a>  
+</li>  
+<li>  
+<a href="http://127.0.0.1:8000/feedback"> Student Feedback </a>  
+</li> 
+</ul>  
+</nav>  
+</header>  
+
+<form method='POST' action="{% url 'add_student' %}">  
+    {% csrf_token %}
+    <div class="container">  
+    <center>  <h1> Student Registeration Form</h1> </center>  
+    <hr>  
+    <label> <b>Student Name:</b> </label>   
+  <input type="text" name="Studentname" placeholder= "Full name" size="30" required /> &nbsp;&nbsp;  
+  <!-- <label> <b>Middlename:</b> </label>    -->
+  <!-- <input type="text" name="middlename" placeholder="Middlename" size="15" required /> &nbsp;&nbsp;  
+  <label> <b>Lastname:</b> </label>    
+  <input type="text" name="lastname" placeholder="Lastname" size="15"required /> &nbsp;&nbsp;   -->
+  <br><br>
+  <label> <b>Reg No:</b> </label>   
+  <input type="text" name="RegNO" placeholder= "Reg No" size="10" required /> &nbsp;&nbsp;
+  <div>  
+  <label>   
+  <b>Class</b> :  
+  </label>   
+    
+  <select>  
+  <!-- <option value="Course">Course</option>   -->
+  <option value="BTECH">BTECH</option>  
+  <option value="THIRD YEAR">THIRD YEAR</option>  
+  <option value="SECOND YEAR">SECOND YEAR</option>  
+  <option value="FIRST YEAR">FIRST YEAR</option>  
+  <!-- <option value="MCA">MCA</option>  
+  <option value="M.Tech">M.Tech</option>   -->
+  </select>  
+  </div>  
+  <!-- <div>  
+  <label>   
+  Gender :  
+  </label><br>  
+  <input type="radio" value="Male" name="gender" checked > Male   
+  <input type="radio" value="Female" name="gender"> Female   
+  <input type="radio" value="Other" name="gender"> Other 
+   
+    
+  </div>   -->
+  <!-- <label>   
+  Phone :  
+  </label>  
+  <input type="text" name="country code" placeholder="Country Code"  value="+91" size="2"/>    
+  <input type="text" name="phone" placeholder="phone no." size="10"/ required>  <br>  --> 
+  <!-- <div class="row align-items-center py-3">   -->
+        <!-- <div class="col-md-3 ps-5">   -->
+            <h4> Upload Photo: </h4>  
+              <!-- <div class="col-md-9 pe-5">   -->
+                <input class="form-control form-control-lg" id="formFileLg" type="file" name="image" />  
+                <div class="small text-muted mt-2"> Upload your image. Max file size 2MB </div>  
+              <!-- </div>   -->
+        <!-- </div> -->
+  <!-- </div> -->
+  
+  <b>Current Address:</b> <br>
+  <textarea cols="40" rows="2" name="address" placeholder="Current Address" value="address" required>  
+  </textarea> <br> <br>
+   <label><b>Taluka</b></label>  
+   <input type="text" placeholder="Enter Taluka" name="Taluka" required> &nbsp;&nbsp;  
+    
+      <label><b>District</b></label>  
+      <input type="text" placeholder="Enter District" name="District" required>  &nbsp;&nbsp; 
+    
+      <label><b>Pin Code</b></label>  
+      <input type="text" placeholder="Pin Code" name="pincode" required>  <br> &nbsp;&nbsp; 
+      <center><button type="submit" class="registerbtn">Register</button></center>    
+  </form>  
+</Body>   
+</Html>  

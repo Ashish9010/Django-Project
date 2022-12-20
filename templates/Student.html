@@ -1,0 +1,70 @@
+<!doctype html>
+ <html>
+	 <head>
+		<title>Student Info</title>
+        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
+        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script> 
+        <script>
+            $(function() {
+               $("#student").dataTable();
+            });
+        </script>
+ 
+ 
+	 </head>
+	 
+	 <body>
+		 <h2> <center>WELCOME TO SGGS College</h2></center>
+		   <h3><center><font color="red">Developed Under The Guidance Of Dr. Balaji Shetty Sir</font> </h3></center>
+		   <hr color="green">
+		   <h4> <center> <h2><b><i>Information About Each Student </i></b></h2></center> </h4>
+		  
+ 
+			<table id="student" class="display" style="width: 100%">
+				<thead>
+					<tr>
+						<th>Image</th>
+				        <th>Studentname</th>
+				        <th>RegNO</th>
+			            <th>address</th>
+				        <th>District</th>
+				        <th>pincode</th>
+					</tr>
+				</thead>
+  
+ 
+		   
+ 
+				 {% for entry in s %}
+				<tr>
+				   <td> {{ entry.image }} </td>
+		           <td align="center"> {{ entry.Studentname }} </td>
+		           <td align="center"> {{ entry.RegNO }} </td>
+		           <td align="center"> {{ entry.address }} </td>
+		           <td align="center"> {{ entry.District }} </td>
+		           <td align="center"> {{ entry.pincode }} </td>
+ 
+				</tr>
+					 
+			   
+				 {% endfor %}
+			</table>
+ 
+				 <!-- <a href="http://127.0.0.1:8000/admin/Student_info/student_info/">
+					<button class="new Student">
+						ADD Entries here 
+					</button>
+				</a> --><br> </br>
+ 
+				 <a href="http://127.0.0.1:8000/">
+					<button class="Home">
+						Back To HOME
+					</button>
+				</a>
+					<br> </br>
+		 
+		 
+		 
+	 </body>
+ </html>

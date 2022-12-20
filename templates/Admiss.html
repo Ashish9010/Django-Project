@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Admission Details</title>
+		<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
+        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script> 
+        <script>
+            $(function() {
+               $("#admission").dataTable();
+            });
+        </script>	
+
+
+    </head>
+    
+    <body>
+    	<h2><center>WELCOME TO SGGG TY IT</h2></center>
+    	  <!-- <h3><center><font color="red">Developed By Python 21Cr Group</font> </h3></center> -->
+    	  <hr color="green">
+    	  <h4> <center> <h3><b>Admission Details </b></h3></center> </h4>
+    	 
+
+    	 	<table id="admission" class="display" style="width:100%">
+				<thead>
+  		            <th>Reg NO--Studentname</th>
+                    <th>Class</th>
+		            <th>Branch</th>
+		            <th>Year</th>
+		            <th>Date Of Admission</th>
+		            <th>Semester</th>
+        		</thead>		  
+
+	    		{% for entry in ad %}
+	    		<tr>
+                    <td  align="center"> {{ entry.regNO }} </td>
+                    <td  align="center"> {{ entry.Class }} </td>
+		            <td  align="center"> {{ entry.branch }} </td>
+		            <td  align="center"> {{ entry.Year }} </td>
+		            <td  align="center"> {{ entry.Date_Admission }} </td>
+		            <td  align="center"> {{ entry.Semester }} </td>
+
+ 				</tr>
+			    	
+			  
+				{% endfor %}
+
+			</table>
+
+				<!-- <a href="http://127.0.0.1:8000/admin/Student_info/admission/">
+					<button class="new Student">
+						ADD Entries here 
+					</button>
+				</a> -->
+				<br> </br>
+				<br> </br>
+
+				<a href="http://127.0.0.1:8000/">
+					<button class="Home">
+						Back To HOME
+					</button>
+				</a>
+					<br> </br>
+
+				
+    	
+    	
+    </body>
+</html>
